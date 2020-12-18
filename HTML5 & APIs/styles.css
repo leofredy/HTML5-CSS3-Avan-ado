@@ -1,0 +1,61 @@
+.video-back{
+	background-color: #333;
+	padding: 10px;
+}
+
+.video-container{
+	position: relative;
+	width: 300px;
+	height: 170px;
+	overflow: hidden;
+	margin: 0 auto;
+	cursor: pointer;
+}
+
+.video-container:active{
+	filter: grayscale(100%);
+}
+
+.logo, #myVideo{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.logo{
+	height: 100%;
+	display: none;
+}
+
+#myVideo{
+	width: 100%;
+}
+
+.topic-list{
+	font-size: 20px;
+	list-style: none;
+	padding: 0;
+	color: white;
+}
+
+.topic-list-item{
+	padding: 10px;
+	cursor: pointer;
+}
+
+.topic-list-item:hover{
+	background-color: #222; 
+}
+
+.speed-button{
+	background-color: #0062ac;
+	color: white;
+	padding: 10px;
+	border: none;
+	cursor: pointer;
+}
+
+button:active{
+	background-color: #0062ee;
+}

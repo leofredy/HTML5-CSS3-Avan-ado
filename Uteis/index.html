@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="primeiro">
+        ABC
+    </div>
+    <br>
+    <input type="text" class="icon"  />
+    <br>
+    <i class="material-icons">
+        menu
+    </i>
+    <br>
+    <div class="create-counter"></div>
+    <div class="increment-counter"></div>
+    <div class="increment-counter"></div>
+    <div class="display-counter"></div>
+
+    <br>
+    <!-- Guardando estado com css -->
+    <h1>Guardando Estados com CSS3</h1>
+        <label for="marcador">
+            <i class="material-icons">
+                menu
+            </i>
+        </label>
+        <input type="checkbox" id="marcador" />
+    <ul class="menu">
+        <li class="menu-item">Home</li>
+        <li class="menu-item">Sobre</li>
+        <li class="menu-item">Contatos</li>
+        <li class="menu-item">Serviços</li>
+    </ul>
+    <br>
+    <h1>TRANSFORMAÇÕES</h1>
+    <div class="transformacao-bone"></div>
+    <img class="transformacao-bone" src="./download.jpg" alt="">
+    <h1>Filtros</h1>
+    <img class="filtros-treinaweb" src="./treinaweb-default.svg" alt="logo treinaweb">
+    <div class="filtros-treinaweb"></div>
+    <h1>Transicoes</h1>
+    <div class="life">
+        <div class="transitions"></div>
+    </div>
+    <script>
+        const element = document.querySelector('.transitions')
+        async function ColorStyle(){
+            let contando = 0;
+            setInterval(() =>{
+                element.style.backgroundColor = 'blue';
+                contando++;
+                setTimeout(() =>{
+                    console.log(contando);
+                    element.style.backgroundColor = 'red';
+                }, 1000);
+            }, 4000);
+        }        
+    </script>
+    <h1>Animações</h1>
+    <div class="create-animation-one box-animation"></div>
+    <div class="create-animation-two box-animation"></div>
+    <div class="time-fila"></div>
+    <script>
+        const elementAnimation = document.querySelector('.create-animation-two')
+        elementAnimation.addEventListener('animationstart', listener, false)
+        elementAnimation.addEventListener('animationend', listener, false)
+        elementAnimation.addEventListener('animationiteration', listener, false)
+        function listener(event){
+            const file = document.querySelector('.time-fila')
+            if(event.type === 'animationstart'){
+                file.innerHTML = `Iniciando fila no tempo: ${event.elapsedTime}s`
+            }else if (event.type === 'animationend'){
+                
+            } else if(event.type === 'animationiteration') {
+                file.innerHTML = `Voê está na fila a: ${event.elapsedTime}s`
+            }
+        }
+    </script>
+    <br>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <img 
+        src="./logo.png" 
+        alt="Treinaweb"
+        id="logo"
+        draggable="true"
+        ondragstart="dragElement(event)"
+    >
+    <div class="container-img">
+        <div 
+            class="drop-area"
+            ondragover="allowDrop(event)"
+            ondrop="onDrop(event, 0)"
+        >
+            <ul>
+                <li>
+                    Vida: <span>100</span>
+                </li>
+                <li>
+                    Ataque: <span>0</span>
+                </li>
+                <li>
+                    Defesa: <span>0</span>
+                </li>
+            </ul>
+        </div>
+        <div 
+            class="drop-area"
+            ondragover="allowDrop(event)"
+            ondrop="onDrop(event, 1)"
+        >
+            <ul>
+                <li>
+                    Vida: <span>100</span>
+                </li>
+                <li>
+                    Ataque: <span>0</span>
+                </li>
+                <li>
+                    Defesa: <span>0</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

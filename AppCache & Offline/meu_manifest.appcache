@@ -1,0 +1,10 @@
+CACHE MANIFEST
+
+# Testando CACHE MANIFEST 1.0.17v
+
+CACHE:
+    style.css
+    script.js
+
+NETWORK:
+    *

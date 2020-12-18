@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Aula 17</title>
+	<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="video-back" >
+	<div class="video-container">
+		<video src="hail-to-the-king-official-music-video.mp3" id="myVideo"
+		  width="300"
+		  height="170"
+		  controls 
+		></video>
+		<img src="logo.png" class="logo" />
+	</div>
+	<ul class="topic-list" >
+		<li 
+			onclick="setVideoTime(0)" 
+			class="topic-list-item"
+		>
+			Item 1 - 0:00
+		</li>
+		<li 
+			onclick="setVideoTime(10)" 
+			class="topic-list-item"
+		>
+			Item 2 - 0:10
+		</li>
+		<li 
+			onclick="setVideoTime(20)" 
+			class="topic-list-item"
+		>
+			Item 3 - 0:20
+		</li>
+	</ul>
+</div>
+
+<button 
+	onclick="setSpeed('down')" 
+	class="speed-button"
+>
+	Vai com calma!
+</button>
+<button 
+	onclick="setSpeed('')" 
+	class="speed-button"
+>
+	Tô de boa
+</button>
+<button 
+	onclick="setSpeed('up')" 
+	class="speed-button"
+>
+	Tô com pressa!
+</button>
+<button 
+	class="speed-button"
+	onclick="startVideo()"
+>
+	Iniciar
+</button>
+<script src="script.js"></script>
+</body>
+</html>

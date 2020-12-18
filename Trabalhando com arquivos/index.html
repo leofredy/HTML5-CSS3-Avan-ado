@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Trabalhando com Arquivos</h1>
+    <input 
+        type="file"
+        onchange="handleFileSelect(event)"
+    >
+    <button 
+        class="button-save-file"
+        onclick="saveFile()"
+    >
+        Salvar
+    </button>
+    <textarea id="text-area" cols="30" rows="10"></textarea>
+    
+    <script src="./script.js"></script>
+</body>
+</html>

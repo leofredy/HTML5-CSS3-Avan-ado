@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas</title>
+
+    <style>
+        canvas {
+            border: solid 1px #000;
+        }
+    </style>
+
+</head>
+<body>
+
+    <figure>
+        <p>
+            <img id="image" width="100" height="50" src="./img.jpg" alt="Logo da Treinaweb">
+            <figcaption>
+                imagem que será desenhada
+            </figcaption>
+        </p>
+    </figure>
+
+    <canvas id="linear" width="400" height="300"></canvas>
+    <canvas id="circule" width="400" height="300"></canvas>
+    <canvas id="esfera2d" width="400" height="300"></canvas>
+    <canvas id="retangulo" width="400" height="300"></canvas>
+    <canvas id="text" width="400" height="300"></canvas>
+    <canvas id="gradient" width="400" height="300"></canvas>
+    <canvas id="img" width="400" height="300"></canvas>
+
+
+    <script>
+        /**
+         *** Principais funções e atributos
+         *
+         * arc(posicaox, posicaoy, tamanho_raio, ang_inicio_arco, ang_final_arco)
+         * fillStyle propriedade que recebe uma cor
+         * método fill() desenha o preenchimento conforme a cor na propriedade fillStyle
+         * strokeRect ou fillRect (posicaoX1, posicaoY1, posicaoX2, posicaoY2)
+         * fillText e strokeText recebem ('textoEscrito', posicaoX, posicaoY);
+         * 
+         * 
+         *** Gradientes
+         * 
+         * O método createLinearGradient retorna um objeto gradiente:
+         *      createLinearGradient(posicaoX1, posicaoY1, posicaoX2, posicaoY2);
+         * 
+         * Com o método .addColorStop() passamos primeiro um number indicando a ordem da cor e segundo parametro a cor
+         *      gradient.addColorStop(1, 'red')
+         * 
+         * Para o atributo fillStyle passamos nosso objeto gradiente para fazer o preenchimento
+         * 
+         * Com o método fillRect definimos o formato e a area canvas
+         * 
+         *** Desenhando Imagens
+        */
+       
+       const canvasLinear = document.querySelector('#linear');
+        const canvasCircule = document.querySelector('#circule');
+        const canvasEsfera2D = document.querySelector('#esfera2d');
+        const canvasRetangulo = document.querySelector('#retangulo');
+        const canvasText = document.querySelector('#text');
+        const canvasGradient = document.querySelector('#gradient');
+        const canvasImg = document.querySelector('#img');
+        
+        const ctxLinear = canvasLinear.getContext('2d');
+        const ctxCircule = canvasCircule.getContext('2d');
+        const ctxEsfera2D = canvasEsfera2D.getContext('2d');
+        const ctxRetangulo = canvasRetangulo.getContext('2d');
+        const ctxText = canvasText.getContext('2d');
+        const ctxGradient = canvasGradient.getContext('2d');
+        const ctxImg = canvasImg.getContext('2d');
+        
+        ctxLinear.moveTo(5, 5);
+        ctxLinear.lineTo(200, 150);
+        ctxLinear.stroke();
+        
+        ctxCircule.arc(200, 150, 60, 0, 2*Math.PI);
+        ctxCircule.stroke();
+        
+        ctxEsfera2D.arc(200, 150, 60, 0, 2*Math.PI);
+        ctxEsfera2D.fillStyle = "#FF0000";
+        ctxEsfera2D.fill();
+        
+        ctxRetangulo.strokeRect(15, 25, 300, 250);
+        
+        ctxText.font = "30px Arial";
+        ctxText.fillStyle = "blue"; 
+        ctxText.fillText('Treinaweb', 150, 150); // ctxText.strokeText('texto', posX, posY)
+        
+        const gradiente = ctxGradient.createLinearGradient(0, 0, 300, 0);
+        gradiente.addColorStop(0, "red");
+        gradiente.addColorStop(1, "green");
+        ctxGradient.fillStyle = gradiente;
+        ctxGradient.fillRect(50, 50, 250, 200);
+        
+        const img = document.querySelector('#image');
+        ctxImg.drawImage(img, 0, 0);
+
+    </script>
+
+</body>
+</html>
+
